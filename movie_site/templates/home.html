@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="ml-container">
+        <p>Machine learning sentiment analysis using SGD with a tokeniser. The data used for learning was the<a class="nav-item nav-link"
+            href="http://ai.stanford.edu/~amaas/data/sentiment/">IMDB Movie Review Dataset</a> Insert a review in the below box and the output will predict whether
+            the reviewer liked the thing he/she was reviewing (positive output), or disliked it (negative output) i.e. sentiment analysis!
+        </p>
+        <form action="{{ url_for('predict')}}" method="POST">
+            <p>Enter Your Review Here:</p>
+            <!-- <input type="text" name="comment"/> -->
+            <textarea name="comment" rows="4" cols="50"></textarea>
+            <br/>
+            <input type="submit" class="btn-info" value="Predict">
+        </form>
+    </div>
+{% endblock content %}
